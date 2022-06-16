@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification de la Sortie{% endblock %}
+
+{% block pageTitle %}
+    Modification de la sortie
+{% endblock %}
+
+{% block body %}
+
+    <a class="btn btn-secondary offset-10" href="{{ path('app_sortie_index') }}">retour à la liste</a>
+        <div class="col-6 mx-auto">
+         {{ include('sortie/_form.html.twig', {'button_label': 'Modifier'}) }}
+          {{ include('sortie/_delete_form.html.twig') }}
+    </div>
+   
+{% endblock %}

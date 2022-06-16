@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau utilisateur{% endblock %}
+
+{% block pageTitle %}
+    Nouveau user
+{% endblock %}
+
+{% block body %}
+
+    <a class="btn btn-secondary offset-10" href="{{ path('app_user_index') }}">retour à la liste</a>
+    <div class="col-6 mx-auto">
+            {{ include('user/_form.html.twig') }}
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entree index{% endblock %}
+
+{% block pageTitle %}
+    Gestion Entrée
+{% endblock %}
+
+{% block body %}
+
+    <table class="table table-striped table-bordered">
+        <div class="my-2 offset-10">
+            <a class="btn btn-secondary" href="{{ path('app_entree_new') }}">Nouvelle entrée</a>
+        </div>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date Entrée</th>
+                <th>Quantité Entrée</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entree in entrees %}
+            <tr>
+                <td>{{ entree.id }}</td>
+                <td>{{ entree.dateE ? entree.dateE|date('Y-m-d') : '' }}</td>
+                <td>{{ entree.qteE }}</td>
+                <td>
+                    <a class="btn-primary px-4 py-2 offset-2" href="{{ path('app_entree_show', {'id': entree.id}) }}"><i class="fas fa-solid fa-eye"></i></a>
+                    <a class="btn-warning px-4 py-2 offset-1" href="{{ path('app_entree_edit', {'id': entree.id}) }}"><i class="fas fa-edit btnedit"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">pas d'entrée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

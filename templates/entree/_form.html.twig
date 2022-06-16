@@ -1,0 +1,6 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary w-100" formnovalidate>{{ button_label|default('Enregistrer') }}</button>
+    </div>  
+{{ form_end(form) }}

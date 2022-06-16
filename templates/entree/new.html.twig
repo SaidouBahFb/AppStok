@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Entree{% endblock %}
+
+{% block pageTitle %}
+    Nouvelle entrée
+{% endblock %}
+
+{% block body %}
+
+    <a class="btn btn-secondary offset-10" href="{{ path('app_entree_index') }}" class="offset-10">retour à la liste</a>
+    <div class="col-6 mx-auto">
+            {{ include('entree/_form.html.twig') }}
+    </div>
+
+{% endblock %}

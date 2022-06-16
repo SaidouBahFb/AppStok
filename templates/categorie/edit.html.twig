@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification Categorie{% endblock %}
+{% block pageTitle %}
+    Modification catégorie
+{% endblock %}
+{% block body %}
+    <a class="btn btn-secondary offset-10" href="{{ path('app_categorie_index') }}">retour à la liste</a>
+
+    <div class="col-6 mx-auto">
+        {{ include('categorie/_form.html.twig', {'button_label': 'Modifier'}) }}
+        {{ include('categorie/_delete_form.html.twig') }}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier utilisateur{% endblock %}
+
+{% block pageTitle %}
+    Modification de l'utilisateur
+{% endblock %}
+
+{% block body %}
+
+    <a class="btn btn-secondary offset-10" href="{{ path('app_user_index') }}">retour à la liste</a>
+
+    <div class="col-6 mx-auto">
+        {{ include('user/_form.html.twig', {'button_label': 'Modifer'}) }}
+
+        {{ include('user/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

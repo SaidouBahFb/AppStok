@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des produits{% endblock %}
+{% block pageTitle %}
+    Liste des produits
+{% endblock %}
+{% block body %}
+
+    <table class="table table-striped table-bordered">
+        <div class="my-2 offset-10">
+            <a class="btn btn-secondary" href="{{ path('app_produit_new') }}">Nouveau produit</a>
+        </div>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix Unitaire</th>
+                <th>Stock</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.nom }}</td>
+                <td>{{ produit.description }}</td>
+                <td>{{ produit.prixUnitaire }} cfa</td>
+                <td>{{ produit.stock }}</td>
+                <td>
+                    <a class="btn-primary px-4 py-2 offset-2" href="{{ path('app_produit_show', {'id': produit.id}) }}"><i class="fas fa-solid fa-eye"></i></a>
+                    <a class="btn-warning px-4 py-2 offset-1" href="{{ path('app_produit_edit', {'id': produit.id}) }}"><i class="fas fa-edit btnedit"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Pas de produits</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

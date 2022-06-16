@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}details produit{% endblock %}
+{% block pageTitle %}
+        Details du produit
+{% endblock %}
+
+{% block body %}
+   <table class="table table-striped table-bordered">
+            <div class="my-2 offset-10">
+                <a class="btn btn-secondary" href="{{ path('app_produit_index') }}">retour à la liste</a>
+            </div>
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ produit.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ produit.nom }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ produit.description }}</td>
+                </tr>
+                <tr>
+                    <th>PrixUnitaire</th>
+                    <td>{{ produit.prixUnitaire }}</td>
+                </tr>
+                <tr>
+                    <th>Stock</th>
+                    <td>{{ produit.stock }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class = "d-flex align-items-center">        
+            <a class="mt-1  btn btn-warning offset-5" href="{{ path('app_produit_edit', {'id': produit.id}) }}">Modifier</a> 
+            <a class="mx-2">{{ include('produit/_delete_form.html.twig') }}</a>
+        </div>
+    </table>
+{% endblock %}
